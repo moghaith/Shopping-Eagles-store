@@ -1,0 +1,126 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: true, use_google: true, require_secure_passwords: true, allow_remember_me: true,
+    remember_me_days: 0.02083}
+  server_config: {user_table: users}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/stripe.yml
+  client_config: {}
+  server_config: {}
+startup: {type: form, module: base}
+package_name: Shopping_Eagles
+allow_embedding: false
+name: Clone of Clone of Clone of Clone of edit
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {}
+startup_form: Admin
+db_schema:
+  users:
+    title: Users
+    client: search
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: remembered_logins
+      admin_ui: {width: 200}
+      type: simpleObject
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: Column8
+      admin_ui: {width: 200}
+      type: simpleObject
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    - name: Admin
+      admin_ui: {width: 200}
+      type: bool
+  cart:
+    title: Cart
+    client: none
+    server: full
+    columns:
+    - name: user
+      admin_ui: {width: 200}
+      type: string
+    - name: Column1
+      admin_ui: {width: 200}
+      type: string
+    - name: Column2
+      admin_ui: {width: 200}
+      type: string
+    - name: Column3
+      admin_ui: {width: 200}
+      type: string
+  ads:
+    title: ads
+    client: none
+    server: full
+    columns:
+    - name: column0
+      admin_ui: {width: 200}
+      type: string
+    - name: ad
+      admin_ui: {width: 200}
+      type: media
+  dropdown:
+    title: Table 4
+    client: search
+    server: full
+    columns:
+    - name: drop
+      admin_ui: {width: 200}
+      type: string
+  store_items:
+    title: Store Items
+    client: full
+    server: full
+    columns:
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+    - name: price
+      admin_ui: {width: 200}
+      type: number
+    - name: image
+      admin_ui: {width: 200}
+      type: media
+    - name: id_name
+      admin_ui: {width: 200}
+      type: string
+    - name: stock
+      admin_ui: {width: 200}
+      type: number
+    - name: Type
+      admin_ui: {width: 200}
+      type: string
+    - name: description
+      admin_ui: {width: 200}
+      type: string
+renamed: true

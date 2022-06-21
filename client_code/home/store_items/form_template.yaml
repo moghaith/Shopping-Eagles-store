@@ -1,0 +1,47 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {role: card, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: small, spacing_above: small, col_widths: '{}', spacing_below: small,
+    background: ''}
+  name: column_panel_1
+  layout_properties: {grid_position: 'NMIVOB,KWHBMN'}
+  components:
+  - type: Image
+    properties: {}
+    name: photo
+    layout_properties: {grid_position: 'REBERA,LHHIOZ'}
+  - type: Label
+    properties: {role: title, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: Description, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: true,
+      underline: false, icon: ''}
+    name: item_description
+    layout_properties: {grid_position: 'AQBBAY,SLWXYT'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: '', font_size: null, font: '', spacing_above: small, icon_align: left,
+      spacing_below: small, italic: false, background: '', bold: true, underline: false,
+      icon: ''}
+    name: iprice
+    layout_properties:
+      col_widths: {}
+      grid_position: PHQKRY,AQEJSR
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: '   Add to Cart', font_size: null, font: '',
+      spacing_above: small, icon_align: left, spacing_below: small, italic: false,
+      background: '#8bfe7c', bold: false, underline: false, icon: 'fa:opencart'}
+    name: add_cart
+    layout_properties: {grid_position: 'MGKNTN,GMVEUH'}
+    event_bindings: {click: add_cart_click}
+is_package: true
+custom_component: true
+properties:
+- {name: image, type: object, default_binding_prop: false}
+- {name: item_label, type: string, default_value: '', default_binding_prop: false}
+- {name: price, type: number, default_value: '', default_binding_prop: false}
+- {name: add_cart_callback, type: object, default_binding_prop: false}
+- {name: add_cart_text, type: string, default_value: ''}

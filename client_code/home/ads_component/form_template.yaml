@@ -1,0 +1,22 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: GridPanel
+  properties: {}
+  name: grid_panel_1
+  layout_properties: {grid_position: 'CHFZPY,SLDHNP'}
+  components:
+  - type: Image
+    properties: {height: 239.90908813476562}
+    name: ad_photo
+    layout_properties: {grid_position: 'UPDDEN,JPVDOF', row: NJRULM, width_xs: 6,
+      col_xs: 0}
+  - type: Image
+    properties: {height: 237}
+    name: ad_photo2
+    layout_properties: {row: NJRULM, width_xs: 6, col_xs: 6}
+is_package: true
+custom_component: true
+properties:
+- {name: ad_image, type: object, default_value: null, default_binding_prop: true}
